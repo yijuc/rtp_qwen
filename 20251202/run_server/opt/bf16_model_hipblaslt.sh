@@ -1,0 +1,25 @@
+export LD_PRELOAD=/opt/rocm/lib/libhipblaslt.so
+export USE_ASM_PA=1
+export REUSE_CACHE=0
+export ENABLE_MERGE_W13=1
+export USE_SWIZZLEA=1
+export USE_AITER_PA=1
+export DEVICE_RESERVE_MEMORY_BYTES=-21474836480
+export AITER_ASM_DIR=/root/.cache/bazel/_bazel_root/627627d02809e114a9183201d70e798e/external/aiter/aiter_meta/hsa/gfx942/
+export MAX_SEQ_LEN=10000
+export CONCURRENCY_LIMIT=1024
+export WORLD_SIZE=1
+export DP_SIZE=1
+export TP_SIZE=1
+export START_PORT=8008
+export WARM_UP=0
+export ACT_TYPE=bf16
+export TOKENIZER_PATH=/mnt/md0/models/Qwen3-32B
+export CHECKPOINT_PATH=/mnt/md0/models/Qwen3-32B
+export MODEL_TYPE=qwen_3
+export FT_SERVER_TEST=1
+export SEQ_SIZE_PER_BLOCK=16
+export LD_LIBRARY_PATH=/opt/rocm/lib:/opt/conda310/lib/:/usr/local/nvidia/lib64:/usr/lib64:/usr/local/cuda/lib64:/opt/amdgpu/lib64:/root/.cache/bazel/_bazel_root/627627d02809e114a9183201d70e798e/external/aiter/aiter/jit
+export HIPBLASLT_LOG_FILE=/root/Qwen3-32B-kernel.log
+export HIPBLASLT_LOG_MASK=32
+/opt/conda310/bin/python3.10 -m rtp_llm.start_server
